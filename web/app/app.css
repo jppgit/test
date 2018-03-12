@@ -1,0 +1,22 @@
+
+.product-list {
+	margin: 25px;
+}
+
+.product-list .products-table th{
+	cursor: pointer;
+}
+.product-list .products-table .order:after {
+  content: '\25b2';  
+}
+.product-list .products-table .order.asc:after {
+  content: '\25bc';  
+}
+
+.product-list .search-header h1{
+	padding-bottom:30px;
+}
+
+.product-list .search-header {
+	margin-bottom: 30px; 
+}

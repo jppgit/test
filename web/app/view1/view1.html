@@ -1,0 +1,30 @@
+<div class="product-list">
+	<h1>Listado de productos</h1>
+	<div class="search-header row">
+		<input  class="search-input form-control form-rounded" type="text" ng-model="model.searchText" placeholder="buscar"></input>
+	</div>
+	<div class="products-table">
+		<table class="table">
+		    <th ng-click="orderBy('ID')">
+		    ID
+		    <span class="order" ng-show="model.propertySelected === 'ID'" ng-class="{asc: model.listOrderASC}"></span>
+			</th>
+		    <th ng-click="orderBy('Nombre')">
+		    Nombre
+		     <span class="order" ng-show="model.propertySelected === 'Nombre'" ng-class="{asc: model.listOrderASC}"></span>
+			</th>
+		    <th ng-click="orderBy('Apellido')">
+		    	Apellido
+		    	<span class="order" ng-show="model.propertySelected === 'Apellido'" ng-class="{asc: model.listOrderASC}"></span>
+		    </th>
+		    <th ng-click="orderBy('DNI')">DNI
+		    	 <span class="order" ng-show="model.propertySelected === 'DNI'" ng-class="{asc: model.listOrderASC}"></span>
+		    </th>
+		    <tr ng-repeat="product in productListData | filter:model.searchText | orderBy:model.propertySelected:model.listOrderASC">
+		    	<td>{{product.ID}}</td>
+		    	<td>{{product.Nombre}}</td>
+		    	<td>{{product.Apellido}}</td>
+		    	<td>{{product.DNI}}</td>
+		    </tr>
+		</table>
+	<div>
